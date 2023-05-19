@@ -1,7 +1,57 @@
-﻿<html xmlns="http://www.w3.org/1999/xhtml">
+﻿@page 
+
+
+@using WebPhoneBook.Views;
+@model IndexModel
+
+
+
+
+
+
+<html>
 <head>
     <title>Первая страница</title>
 </head>
 <body>
+    <div class="container">
+        <table class="table">
+            <thead class="thead-light"></thead>
+            <tbody>
+                <tr><th>Id</th><th>Name</th>
+                    <th>LastName</th><th>MiddleName</th>
+                    <th>PhoneNumber</th><th>Address</th>
+                    <th>Description</th>
+                   </tr>
+                @foreach (var item in Model.Percons)
+                {
+                    <tr>
+                        <td>
+                                @Html.DisplayFor(modelItem => item.Id)
+                        </td>   
+                        <td>
+                                @Html.DisplayFor(modelItem => item.Name)
+                        </td>
+                        <td>
+                                @Html.DisplayFor(modelItem => item.LastName)
+                        </td>
+                        <td>
+                                @Html.DisplayFor(modelItem => item.MiddleName)
+                        </td>
+                        <td>
+                                @Html.DisplayFor(modelItem => item.PhoneNumber)
+                        </td>
+                        <td>
+                                @Html.DisplayFor(modelItem => item.Address)
+                        </td>
+                        <td>
+                                @Html.DisplayFor(modelItem => item.Description)
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+
+    </div>
 </body>
 </html>

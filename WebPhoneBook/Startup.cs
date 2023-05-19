@@ -18,9 +18,12 @@ namespace WebPhoneBook
             services.AddMvc();
         }
 
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env)
+        public async void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
             app.UseStaticFiles();
+            Console.WriteLine("текст о запуске конфига");
+            
+
             app.UseMvc(
                 run =>
                 {
